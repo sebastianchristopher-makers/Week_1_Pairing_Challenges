@@ -26,3 +26,9 @@ h = { a: 2, b: 5, c: 1 }
 expected = { a: 1, b: 2, c: 5 }
 try = h.keys.zip(h.values.sort).to_h
 puts Test.assert_equals(expected,try)
+
+puts "3. { a: 2, b: 5, c: 1 } => [1, 2, 5]"
+h = { a: 2, b: 5, c: 1 }
+expected = [1, 2, 5]
+try = h.values.sort
+puts Test.assert_equals(expected,try)

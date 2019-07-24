@@ -32,3 +32,9 @@ h = { a: 2, b: 5, c: 1 }
 expected = [1, 2, 5]
 try = h.values.sort
 puts Test.assert_equals(expected,try)
+
+puts "4. { a: 1, b: 2, c: 3 } => { '1'=>'a', '2'=>'b', '3'=>'c' }"
+h = { a: 1, b: 2, c: 3 }
+expected = { "1"=>"a", "2"=>"b", "3"=>"c" }
+try = h.values.map(&:to_s).zip(h.keys.map(&:to_s)).to_h
+puts Test.assert_equals(expected,try)
